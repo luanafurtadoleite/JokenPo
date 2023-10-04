@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mooli', sans-serif;
+}
+
+body{
+    background: url("https://source.unsplash.com/1600x900/?landscape");
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1{
+    margin-bottom: 20px;
+}
+
+.container{
+    margin-bottom: 20px;
+}
+
+button:hover{
+    opacity: 0.7;
+}
+
+.rock, .paper, .scissors{
+    display: inline-block;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: opacity 0.8s ease-in-out;
+    border: none;
+}
+
+.rock:hover{
+    background-color: rgb(194, 78, 78);
+}
+.paper:hover{
+    background-color: rgb(83, 83, 187);
+}
+.scissors:hover{
+   background-color: rgb(105, 187, 105);
+}
+
+p{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#yourscore span{
+    color: rgb(62, 62, 173);
+}
+
+#scorealexa span{
+    color: rgb(236, 49, 49);
+}
+
+#resetButton {
+    background-color: #707274; 
+    color: #fff; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .container {
+        margin-bottom: 40px;
+    }
+
+    .rock,
+    .paper,
+    .scissors {
+        padding: 10px 20px; 
+    }
+
+    #resetButton {
+        padding: 10px 20px; 
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        margin-bottom: 20px; 
+    }
+
+    .rock,
+    .paper,
+    .scissors {
+        padding: 8px 16px; 
+    }
+
+    #resetButton {
+        padding: 8px 16px; 
+    }
+}
