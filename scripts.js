@@ -1,13 +1,23 @@
 let result = document.querySelector('.result')
 let yourScore = document.querySelector('#humanscore')
 let scoreMachine = document.querySelector('#machinescore')
+let machineChoiceElement = document.querySelector('#machinechoice');
 
 let humanScoreNumber = 0
 let machineScoreNumber = 0
 
 let playHuman = (humanchoice) =>{
-    const machineChoice = playMachine()
-    playTheGame (humanchoice, machineChoice)
+    result.innerHTML = "Escolhendo...";
+    setTimeout(() => {
+        simulateMachineChoiceClick();
+    }, 1000);
+}
+
+function simulateMachineChoiceClick() {
+    const choiceClasses = ['.rock', '.paper', '.scissors'];
+    const randomNumber = Math.floor(Math.random() * 3);
+    const machineChoiceButton = document.querySelector(`${choiceClasses[randomNumber]}`);
+    machineChoiceButton.click();
 }
 
 let playMachine = () =>{

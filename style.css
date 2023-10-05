@@ -71,6 +71,15 @@ p{
     color: rgb(236, 49, 49);
 }
 
+#choice {
+    display: none; 
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; 
+    position: absolute;
+    transition: transform 0.5s ease-in-out;
+}
+
 #resetButton {
     background-color: #707274; 
     color: #fff; 
