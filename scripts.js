@@ -9,23 +9,17 @@ let machineScoreNumber = 0
 let playHuman = (humanchoice) =>{
     result.innerHTML = "Escolhendo...";
     setTimeout(() => {
-        simulateMachineChoiceClick();
+        playMachine();
     }, 1000);
 }
 
-function simulateMachineChoiceClick() {
-    const choiceClasses = ['.rock', '.paper', '.scissors'];
-    const randomNumber = Math.floor(Math.random() * 3);
-    const machineChoiceButton = document.querySelector(`${choiceClasses[randomNumber]}`);
+let playMachine = () =>{
+    let choiceClasses = ['rock', 'paper', 'scissors']
+    let randomNumber = Math.floor (Math.random() *3)
+    let machineChoiceButton = document.querySelector(`${choiceClasses[randomNumber]}`);
     machineChoiceButton.click();
 }
-
-let playMachine = () =>{
-    const choice = ['rock', 'paper', 'scissors']
-    const randomNumber = Math.floor (Math.random() *3)
-
-    return choice [randomNumber] 
-}
+    
 
 let playTheGame = (human, machine) =>{
     
