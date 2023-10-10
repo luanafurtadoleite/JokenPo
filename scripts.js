@@ -9,18 +9,20 @@ let machineScoreNumber = 0
 let playHuman = (humanchoice) =>{
     result.innerHTML = "Escolhendo...";
     setTimeout(() => {
-        playMachine();
+        const machineChoice = playMachine(); 
+        playTheGame(humanchoice, machineChoice); 
     }, 1000);
 }
 
 let playMachine = () =>{
-    let choiceClasses = ['rock', 'paper', 'scissors']
-    let randomNumber = Math.floor (Math.random() *3)
-    let machineChoiceButton = document.querySelector(`${choiceClasses[randomNumber]}`);
-    machineChoiceButton.click();
+    let choiceClasses = ['rock', 'paper', 'scissors'];
+    let randomNumber = Math.floor(Math.random() * 3);
+    let machineChoice = choiceClasses[randomNumber];
+    machineChoiceElement.innerHTML = `Escolha da máquina: ${machineChoice}`;
+        
+    return machineChoice;
 }
-    
-
+  
 let playTheGame = (human, machine) =>{
     
    if(human === machine){
@@ -49,4 +51,6 @@ resetButton.addEventListener ('click', () => {
     yourScore.innerHTML = humanScoreNumber;
     scoreMachine.innerHTML = machineScoreNumber;
     result.innerHTML = "";
+    machineChoiceElement.innerHTML = ""; 
+    machineChoiceElement.style.backgroundColor = ''; 
 })
